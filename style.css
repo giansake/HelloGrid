@@ -1,0 +1,93 @@
+/* -------------------- */
+/* Variables */
+:root {
+  --light-gray: rgb(227, 227, 227);
+  --dark-gray: rgb(51, 51, 51);
+}
+/* -------------------- */
+
+/* -------------------- */
+/* Global styles */
+/* -------------------- */
+* {
+  margin: 0;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+body {
+  padding-top: 10px;
+  padding-right: 1em;
+  padding-left: 1em;
+  font-size: 16px;
+}
+/* -------------------- */
+
+/* -------------------- */
+/* Locations grid and card styles */
+/* -------------------- */
+.locations-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.location-card {
+  border: 1px solid var(--light-gray);
+  border-radius: 1em;
+  overflow: hidden;
+}
+
+.location-card * {
+  transition: all 0.3s;
+}
+
+.location-card:hover {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.location-card:hover .image-plceholder {
+  background-color: var(--dark-gray);
+}
+
+.image-plceholder {
+  aspect-ratio: 1 / 1;
+  background-color: var(--light-gray);
+}
+
+.location-info {
+  padding: 0.5em 1em;
+}
+
+.location-info h1,
+.location-info p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* -------------------- */
+
+/* -------------------- */
+/* mobile styles */
+/* -------------------- */
+@media (min-width: 768px) and (max-width: 992px) {
+  body {
+    font-size: 14px;
+  }
+  .locations-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 12px;
+  }
+  .locations-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* -------------------- */
